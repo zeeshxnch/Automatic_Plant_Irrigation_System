@@ -1,12 +1,20 @@
-# Automatic_Plant_Irrigation_System
+# Automated Smart Irrigation System
 
 An automated Java-based embedded system designed to monitor soil moisture levels, control a water pump, and display real-time telemetry on an OLED screen. Built using the **Firmata4j** framework to interface directly with microcontroller hardware, this system features background monitoring tasks, threshold-based automated feedback loops, unit testing, and dynamic telemetry plotting.
 
 ---
 
+## Hardware Setup & System Flowchart
+
+| Physical Circuit Setup | System Control Flowchart |
+| :---: | :---: |
+| ![Hardware Setup](setup.jpg) | ![System Flowchart](flowchart.png) |
+
+---
+
 ## Key Features
 
-* **Real-Time Automated Control:** Periodically samples soil moisture data via analog input and toggles a relay/pump output based on predefined threshold values (`DRY_THRESHOLD: 705`, `WET_THRESHOLD: 650`).
+* **Real-Time Automated Control:** Periodically samples soil moisture data via analog input and toggles a relay/MOSFET pump output based on predefined threshold values (`DRY_THRESHOLD: 705`, `WET_THRESHOLD: 650`).
 * **OLED Visual Status Display:** Updates an I2C SSD1306 OLED display every second showing exact moisture readings and state notifications (`Dry`, `OK`, `Wet`).
 * **Data Visualization & Plotting:** Utilizes `StdDraw` to convert time-series moisture logs into a structured 2D Cartesian plot for post-run analysis.
 * **Unit Testing Suite:** Includes JUnit test coverage to verify board connection readiness, pump pin default states, and log initialization.
